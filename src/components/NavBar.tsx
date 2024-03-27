@@ -21,7 +21,6 @@ export default function NavBar() {
   return (
     <>
       <Navbar
-        isBordered
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
       >
