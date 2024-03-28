@@ -3,9 +3,10 @@ import FotoRetrato from "./assets/images/foto_retrato.png";
 
 import { Button, Link } from "@nextui-org/react";
 import { TypeAnimation } from "react-type-animation";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin } from "lucide-react";
 import { useEffect } from "react";
 import CardProject from "./components/CardProject";
+
 
 function App() {
   useEffect(() => {
@@ -30,7 +31,7 @@ function App() {
               wrapper="span"
             />
 
-            <div>
+            <div className="flex flex-col text-center md:text-start">
               <p>
                 UX/UI Designer & Front-end no{" "}
                 <Link
@@ -74,14 +75,13 @@ function App() {
               alt=""
             />
 
-            <div className="mx-4 flex flex-row justify-between">
+            <div className="mx-4 flex flex-row justify-around">
               <Link
                 href="https://github.com/valladev"
                 color="foreground"
                 className="text-zinc-500 flex items-center gap-2"
               >
                 <Github />
-                GitHub
               </Link>
 
               <Link
@@ -89,7 +89,13 @@ function App() {
                 className="text-zinc-500 flex items-center gap-2"
               >
                 <Linkedin />
-                Linkedin
+              </Link>
+
+              <Link
+                href="https://www.instagram.com/joaobarbozaaa/"
+                className="text-zinc-500 flex items-center gap-2"
+              >
+                <Instagram />
               </Link>
             </div>
           </div>
@@ -97,7 +103,7 @@ function App() {
       </div>
 
       <div className="bg-zinc-100 ">
-        <div className="w-full p-4 pt-10 flex text-center items-center flex-col gap-4 max-w-5xl m-auto text-2xl font-semibold">
+        <div className="w-full p-4 pt-10 flex text-center lg:text-start flex-col gap-4 max-w-5xl m-auto text-2xl font-semibold">
           <div className="space-y-2">
             <h1>Projetos de estudo</h1>
             <p className="text-base text-foreground-400 font-light">
@@ -105,8 +111,11 @@ function App() {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row h-fit gap-4 ">
-
+          <div
+            id="card-projects"
+            className="flex flex-wrap md:flex-row h-fit gap-4 w-full justify-center lg:justify-start items-center"
+          >
+            <CardProject />
             <CardProject />
 
             <CardProject />

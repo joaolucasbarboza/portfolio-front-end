@@ -16,7 +16,7 @@ import { Outlet } from "react-router-dom";
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["Work", "About", "Resume"];
+  const menuItems = ["Projetos", "Sobre", "Contato"];
 
   return (
     <>
@@ -56,7 +56,7 @@ export default function NavBar() {
               color="foreground"
               href="#"
             >
-              Work
+              Projetos
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
@@ -64,7 +64,7 @@ export default function NavBar() {
               href="#"
               aria-current="page"
             >
-              About
+              Sobre
             </Link>
           </NavbarItem>
           <NavbarItem>
@@ -72,7 +72,7 @@ export default function NavBar() {
               color="foreground"
               href="#"
             >
-              Resume
+              Contato
             </Link>
           </NavbarItem>
         </NavbarContent>

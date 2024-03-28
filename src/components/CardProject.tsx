@@ -2,13 +2,14 @@ import * as React from "react";
 
 import Post from "../assets/images/post.png";
 import { Button, Image } from "@nextui-org/react";
+import { Github, Globe } from "lucide-react";
 
 export default function CardProject() {
   return (
-    <div className="flex flex-col  max-w-[488px] md:flex-row gap-4 ">
-      <div className="flex flex-col max-w-xl space-y-3">
+    <div className="flex flex-col max-w-[488px] md:flex-row gap-4 ">
+      <div className="flex flex-col text-start max-w-xl space-y-3">
         <Image
-          className="rounded-none w-[488px] "
+          className="rounded-none "
           alt="NextUI hero Image"
           src={Post}
         />
@@ -21,13 +22,25 @@ export default function CardProject() {
           deserunt at quas.{" "}
         </p>
 
-        <Button
-          variant="solid"
-          className="w-full md:w-fit"
-          color="primary"
-        >
-          Visitar
-        </Button>
+        <div className="flex justify-start gap-2">
+          <Button
+            variant="solid"
+            className="w-full lg:w-fit"
+            color="primary"
+          >
+            <Globe size={18} />
+            Visitar
+          </Button>
+
+          <Button
+            variant="solid"
+            className="w-full lg:w-fit bg-black"
+            color="primary"
+          >
+            <Github size={18} />
+            Repositório
+          </Button>
+        </div>
       </div>
     </div>
   );
