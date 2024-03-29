@@ -16,7 +16,7 @@ function App() {
 
         let alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = "curriculo.pdf";
+        alink.download = "curriculo_barboza.pdf";
         alink.click();
       });
     });
