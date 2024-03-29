@@ -5,10 +5,23 @@ import { Button, Link } from "@nextui-org/react";
 import { TypeAnimation } from "react-type-animation";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import { useEffect } from "react";
+import Curriculo from "./assets/curriculo.pdf";
 import CardProject from "./components/CardProject";
 
-
 function App() {
+  const downloadCRV = () => {
+    fetch(Curriculo).then((response) => {
+      response.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob);
+
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "barboza_curriculo.pdf";
+        alink.click();
+      });
+    });
+  };
+
   useEffect(() => {
     gsap.fromTo(
       "#box-img",
@@ -26,7 +39,7 @@ function App() {
               className="max-w-md text-center md:text-start md:w-[448px] font-bold text-zinc-400 text-4xl md:3xl min-h-24 md:min-h-16"
               sequence={[
                 `Olá, sou João Lucas Barboza. UI/UX Designer & Full-stack Developer.`,
-                6000,
+                2000,
               ]}
               wrapper="span"
             />
@@ -57,9 +70,9 @@ function App() {
             </div>
 
             <Button
-              className="w-fit"
-              variant={"shadow"}
+              variant="shadow"
               color="primary"
+              onClick={downloadCRV}
             >
               Baixar CRV
             </Button>
