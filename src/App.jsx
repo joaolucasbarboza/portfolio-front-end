@@ -16,7 +16,7 @@ function App() {
 
         let alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = "barboza_curriculo.pdf";
+        alink.download = "curriculo.pdf";
         alink.click();
       });
     });
@@ -130,7 +130,6 @@ function App() {
           >
             <CardProject />
             <CardProject />
-
             <CardProject />
           </div>
         </div>
