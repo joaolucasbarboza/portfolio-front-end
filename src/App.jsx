@@ -74,7 +74,7 @@ function App() {
               color="primary"
               onClick={downloadCRV}
             >
-              Baixar CRV
+              Baixar currículo
             </Button>
           </div>
 
