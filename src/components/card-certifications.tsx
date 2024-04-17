@@ -70,7 +70,7 @@ export function CardCertifications({
           Código credencial: {codeCredential}
         </p> */}
       </CardBody>
-      <Divider />
+      {/* <Divider /> */}
       {/* <CardFooter>
         <Link
           className="cursor-pointer"

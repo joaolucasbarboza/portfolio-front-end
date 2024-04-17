@@ -113,7 +113,7 @@ function App() {
 
           <ScrollShadow
             orientation="horizontal"
-            className="flex sm:gap-8 gap-4 max-h-fit"
+            className="flex sm:gap-8 py-2 gap-4 max-h-fit"
           >
             <CardCertifications
               srcImage={logoGoogle}

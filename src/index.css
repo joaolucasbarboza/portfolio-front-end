@@ -16,3 +16,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+::-webkit-scrollbar {
+  margin-top: 4px;
+  width: 6px;
+  height: 12px;
+  /* Largura da barra de rolagem */
+}
+
+/* Estilizando o polegar (a parte que você arrasta) */
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-400 rounded-lg
+}
+
+/* Estilizando a área de rastreamento (a área cinza ao redor do polegar) */
+::-webkit-scrollbar-track {
+  @apply bg-slate-300;
+}
