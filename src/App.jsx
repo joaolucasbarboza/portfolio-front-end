@@ -1,27 +1,22 @@
 import gsap from "gsap";
 import FotoRetrato from "./assets/images/foto_retrato.png";
+import logoGoogle from "./assets/images/google.svg";
+import LogoAws from "./assets/images/aws.svg";
+import LogoAlura from "./assets/images/alura.png";
+import LogoUdemy from "./assets/images/udemy.png";
+import LogoRocketseat from "./assets/images/rocketseat.png";
 
-import { Button, Link } from "@nextui-org/react";
+import { Link, ScrollShadow } from "@nextui-org/react";
 import { TypeAnimation } from "react-type-animation";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import { useEffect } from "react";
-import Curriculo from "./assets/curriculo.pdf";
-import CardProject from "./components/CardProject";
+
+// import { CardProject } from "./components/card-project-blood-bank";
+// import { CardProjectApiPortfolio } from "./components/card-project-api-potfolio";
+import { DownloadCV } from "./components/download-cv";
+import { CardCertifications } from "./components/card-certifications";
 
 function App() {
-  const downloadCRV = () => {
-    fetch(Curriculo).then((response) => {
-      response.blob().then((blob) => {
-        const fileURL = window.URL.createObjectURL(blob);
-
-        let alink = document.createElement("a");
-        alink.href = fileURL;
-        alink.download = "curriculo_barboza.pdf";
-        alink.click();
-      });
-    });
-  };
-
   useEffect(() => {
     gsap.fromTo(
       "#box-img",
@@ -29,6 +24,7 @@ function App() {
       { x: 0, opacity: 1, duration: 2.5 }
     );
   }, []);
+
 
   return (
     <div className="space-y-14">
@@ -69,13 +65,7 @@ function App() {
               </p>
             </div>
 
-            <Button
-              variant="shadow"
-              color="primary"
-              onClick={downloadCRV}
-            >
-              Baixar currículo
-            </Button>
+            <DownloadCV />
           </div>
 
           <div
@@ -115,23 +105,97 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-zinc-100 ">
-        <div className="w-full p-4 pt-10 flex text-center lg:text-start flex-col gap-4 max-w-5xl m-auto text-2xl font-semibold">
-          <div className="space-y-2">
-            <h1>Projetos de estudo</h1>
-            <p className="text-base text-foreground-400 font-light">
-              Projeos não projetados comercialmente, apenas para estudos.
-            </p>
+      <div className="bg-zinc-100 pb-10">
+        <div className="w-full p-4 pt-10 flex text-center md:text-start flex-col gap-8 max-w-5xl m-auto text-2xl font-semibold">
+          <div>
+            <p>Certificações</p>
           </div>
 
-          <div
-            id="card-projects"
-            className="flex flex-wrap md:flex-row h-fit gap-4 w-full justify-center lg:justify-start items-center"
+          <ScrollShadow
+            orientation="horizontal"
+            className="flex sm:gap-8 gap-4 max-h-fit"
           >
-            <CardProject />
-            <CardProject />
-            <CardProject />
-          </div>
+            <CardCertifications
+              srcImage={logoGoogle}
+              title="Certificado Profissional Google UX Design"
+              locationCourse="Coursera"
+              textChip="Em andamento"
+              sizeChips={"sm"}
+              colorChips="warning"
+              date="Ainda não emitido."
+              childrenLink={"isDisable"}
+            />
+
+            <CardCertifications
+              srcImage={LogoAws}
+              title="Amazon AWS Cloud Practitioner CLF-C02"
+              locationCourse="Udemy"
+              textChip="Em andamento"
+              sizeChips={"sm"}
+              colorChips="warning"
+              date="Ainda não emitido."
+            />
+
+            <CardCertifications
+              srcImage={LogoAlura}
+              title="Spring Boot 3: Desenvolva uma API Rest em Java"
+              locationCourse="Alura"
+              textChip="Concluído"
+              sizeChips={"sm"}
+              colorChips="success"
+              date="Fevereiro de 2024"
+            />
+
+            <CardCertifications
+              srcImage={LogoAlura}
+              title="Sring Boot 3: Boas práticas e proteja uma API Rest"
+              locationCourse="Alura"
+              textChip="Concluído"
+              sizeChips={"sm"}
+              colorChips="success"
+              date="Março de 2024."
+            />
+
+            <CardCertifications
+              srcImage={LogoUdemy}
+              title="NextJs e React"
+              locationCourse="Udemy"
+              textChip="Concluído"
+              sizeChips={"sm"}
+              colorChips="success"
+              date="Fevereiro de 2024."
+            />
+
+            <CardCertifications
+              srcImage={LogoRocketseat}
+              title="NLW Unite - ReactJs"
+              locationCourse="Rocketseat"
+              textChip="Concluído"
+              sizeChips={"sm"}
+              colorChips="success"
+              date="Abril de 2024."
+            />
+
+            <CardCertifications
+              srcImage={LogoRocketseat}
+              title="NLW IA"
+              locationCourse="Rocketseat"
+              textChip="Concluído"
+              sizeChips={"sm"}
+              colorChips="success"
+              date="Setembro de 2023."
+            />
+
+            <CardCertifications
+              srcImage={LogoRocketseat}
+              title="Conectar"
+              locationCourse="Rocketseat"
+              textChip="Concluído"
+              sizeChips={"sm"}
+              colorChips="success"
+              date="Junho de 2022."
+            />
+          </ScrollShadow>
         </div>
       </div>
     </div>
