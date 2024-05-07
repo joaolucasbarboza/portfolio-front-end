@@ -80,7 +80,7 @@ function App() {
 
             <div className="mx-4 flex flex-row justify-around">
               <Link
-                href="https://github.com/valladev"
+                href="https://github.com/joaolucasbarboza"
                 color="foreground"
                 className="text-zinc-500 flex items-center gap-2"
               >
